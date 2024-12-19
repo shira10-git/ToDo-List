@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.9.34728.123
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32802.440
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TodoApi", "TodoApi.csproj", "{E9CBFEDC-41C9-4B9E-AAF7-6EF92E134213}"
 EndProject
@@ -19,4 +19,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolut
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {209914A4-BECB-494F-A5B5-16B9C5188B4B}
+	EndGlobalSection
+EndGlobal
