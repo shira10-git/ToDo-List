@@ -123,11 +123,11 @@ var app = builder.Build();
 app.UseCors("AllowAllOrigins");
 
 // הפעלת Swagger בשלב הריצה
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger(); // מגייס את Swagger UI
     app.UseSwaggerUI(); // מציג את ממשק ה-UI של Swagger
-}
+//}
 
 // שליפת כל המשימות
 app.MapGet("/tasks", async (ToDoDbContext dbContext) =>
@@ -173,7 +173,7 @@ app.MapDelete("/tasks/{id}", async (ToDoDbContext dbContext, int id) =>
 
 // Route ברירת מחדל
 app.MapGet("/", () => "Hello World!");
-
+app.MapGet("/", () => "TodoApi is running");
 // הפעלת האפליקציה
 app.Run();
 

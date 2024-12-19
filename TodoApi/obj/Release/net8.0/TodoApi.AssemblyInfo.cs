@@ -11,9 +11,8 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("ad1b27de-3666-4842-bbe8-730cd320b684")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("TodoApi")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b679cd536dc25ccb2f92dcc6694f7a9e5fb58d37")]
 [assembly: System.Reflection.AssemblyProductAttribute("TodoApi")]
