@@ -125,9 +125,15 @@ app.UseCors("AllowAllOrigins");
 // הפעלת Swagger בשלב הריצה
 //if (app.Environment.IsDevelopment())
 //{
-    app.UseSwagger(); // מגייס את Swagger UI
-    app.UseSwaggerUI(); // מציג את ממשק ה-UI של Swagger
+   // app.UseSwagger(); // מגייס את Swagger UI
+   // app.UseSwaggerUI(); // מציג את ממשק ה-UI של Swagger
 //}
+if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
+{
+    app.UseSwagger(); // מייצר את ה-Swagger JSON
+    app.UseSwaggerUI(); // מציג את ממשק ה-UI של Swagger
+}
+
 
 // שליפת כל המשימות
 app.MapGet("/tasks", async (ToDoDbContext dbContext) =>
@@ -172,15 +178,15 @@ app.MapDelete("/tasks/{id}", async (ToDoDbContext dbContext, int id) =>
 });
 
 // Route ברירת מחדל
-app.MapGet("/", () => "Hello World!");
+
 app.MapGet("/", () => "TodoApi is running");
 // הפעלת האפליקציה
 app.Run();
 
 // המודל של משימה
-record Item
-{
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public bool IsComplete { get; set; }
-}
+// record Item
+// {
+//     public int Id { get; set; }
+//     public string Name { get; set; }
+//     public bool IsComplete { get; set; }
+// }
