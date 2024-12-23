@@ -99,14 +99,15 @@ var builder = WebApplication.CreateBuilder(args);
 // הוספת CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAllOrigins",
+    options.AddPolicy("AllowSpecificOrigins",
         policy =>
         {
-            policy.AllowAnyOrigin()
+            policy.WithOrigins("https://todo-list-client-4na8.onrender.com/")
                   .AllowAnyMethod()
                   .AllowAnyHeader();
         });
 });
+
 
 // הוספת DbContext לשירותים
 builder.Services.AddDbContext<ToDoDbContext>(options =>
