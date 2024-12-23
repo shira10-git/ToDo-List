@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import service from './service.js';
 
 function App() {
+  console.log("REACT_APP_TEST:", process.env.REACT_APP_TEST);
   console.log("API URL:", process.env.REACT_APP_API_URL);
 
   const [newTodo, setNewTodo] = useState("");
