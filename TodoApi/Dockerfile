@@ -24,10 +24,10 @@
 # ENTRYPOINT ["dotnet", "TodoApi.dll"]
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
-EXPOSE 80
+# EXPOSE 80
 EXPOSE 5147
 
-ENV ASPNETCORE_URLS=http://+:80
+ENV ASPNETCORE_URLS=http://+:5147
 
 FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG configuration=Release
