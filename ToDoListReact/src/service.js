@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 // הגדרת כתובת ה-API כ-default
-// const apiUrl = "http://localhost:5147";
-const apiUrl = process.env.REACT_APP_API_URL;
+const apiUrl = "https://todo-list-server-ofps.onrender.com";
+// const apiUrl = process.env.REACT_APP_API_URL;
 
 
 axios.defaults.baseURL = apiUrl;  // הגדרת כתובת ברירת המחדל לכל הקריאות
