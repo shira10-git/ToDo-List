@@ -11,7 +11,7 @@ axios.defaults.baseURL = apiUrl;  // הגדרת כתובת ברירת המחדל
 axios.interceptors.response.use(
   response => response, // אם הקריאה הצליחה, מחזירים את התשובה כרגיל
   error => {
-    console.error("API Error: ", error.response ? error.response.data : error.message);
+    console.error("API Error : ", error.response ? error.response.data : error.message);
     return Promise.reject(error); // מחזירים את השגיאה למעלה
   }
 );
