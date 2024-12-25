@@ -102,7 +102,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowSpecificOrigins",
         policy =>
         {
-            policy.WithOrigins("https://todo-list-client-4na8.onrender.com/")
+            policy.WithOrigins("https://todo-list-client-4na8.onrender.com")
                   .AllowAnyMethod()
                   .AllowAnyHeader();
         });
