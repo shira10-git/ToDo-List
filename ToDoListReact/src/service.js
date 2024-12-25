@@ -20,7 +20,7 @@ export default {
   // שליפת כל המשימות
   getTasks: async () => {
     try {
-      const result = await axios.get("https://todo-list-server-ofps.onrender.com/tasks");
+      const result = await axios.get("/tasks");
       return result.data;
     } catch (error) {
       console.error("Error fetching tasks:", error);
