@@ -1,12 +1,12 @@
 import axios from 'axios';
 
 // הגדרת כתובת ה-API כ-default
-// const apiUrl = "https://todo-list-server-ofps.onrender.com";
-const apiUrl = process.env.REACT_APP_API_URL;
+const apiUrl = "https://todo-list-server-ofps.onrender.com";
+// const apiUrl = process.env.REACT_APP_API_URL;
 
 
 axios.defaults.baseURL = apiUrl;  // הגדרת כתובת ברירת המחדל לכל הקריאות
-
+console.log("axios.defaults.baseURL",axios.defaults.baseURL)
 // הוספת interceptor לתפיסת שגיאות
 axios.interceptors.response.use(
   response => response, // אם הקריאה הצליחה, מחזירים את התשובה כרגיל
@@ -20,7 +20,7 @@ export default {
   // שליפת כל המשימות
   getTasks: async () => {
     try {
-      const result = await axios.get("/tasks");
+      const result = await axios.get("https://todo-list-server-ofps.onrender.com/tasks");
       return result.data;
     } catch (error) {
       console.error("Error fetching tasks:", error);
