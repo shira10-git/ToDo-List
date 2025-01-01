@@ -5,7 +5,7 @@ const apiUrl = process.env.REACT_APP_API_URL || "https://todo-list-server-ofps.o
 
 axios.defaults.baseURL = apiUrl;
 console.log("axios.defaults.baseURL:", axios.defaults.baseURL);
-
+console.log("apiUrl:", apiUrl);
 // Interceptor לניהול שגיאות
 axios.interceptors.response.use(
   response => response,
