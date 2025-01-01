@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 // קביעת כתובת ברירת מחדל
-const apiUrl = process.env.REACT_APP_API_URL;
+//const apiUrl = process.env.REACT_APP_API_URL;
+const apiUrl = "http://localhost:5147";
 
 //axios.defaults.baseURL = apiUrl;
 //console.log("axios.defaults.baseURL:", axios.defaults.baseURL);
