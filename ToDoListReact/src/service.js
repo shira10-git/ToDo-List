@@ -3,8 +3,10 @@ import axios from 'axios';
 // קביעת כתובת ברירת מחדל
 const apiUrl = process.env.REACT_APP_API_URL;
 
-axios.defaults.baseURL = apiUrl;
-console.log("axios.defaults.baseURL:", axios.defaults.baseURL);
+//axios.defaults.baseURL = apiUrl;
+//console.log("axios.defaults.baseURL:", axios.defaults.baseURL);
+console.log("apiUrl:", apiUrl);
+apiUrl="https://"+apiUrl;
 console.log("apiUrl:", apiUrl);
 // Interceptor לניהול שגיאות
 axios.interceptors.response.use(
@@ -22,7 +24,7 @@ axios.interceptors.response.use(
 export default {
   getTasks: async () => {
     try {
-      const result = await axios.get("/tasks");
+      const result = await axios.get(apiUrl+"/tasks");
       return result.data;
     } catch (error) {
       if (!error.response) {
