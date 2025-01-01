@@ -1,12 +1,10 @@
 import axios from 'axios';
 
 // קביעת כתובת ברירת מחדל
-const apiUrl = process.env.REACT_APP_API_URL;
+const apiUrl = `https://${process.env.REACT_APP_API_URL}`;
 
 //axios.defaults.baseURL = apiUrl;
 //console.log("axios.defaults.baseURL:", axios.defaults.baseURL);
-console.log("apiUrl:", apiUrl);
-apiUrl="https://"+apiUrl;
 console.log("apiUrl:", apiUrl);
 // Interceptor לניהול שגיאות
 axios.interceptors.response.use(
