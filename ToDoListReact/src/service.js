@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // קביעת כתובת ברירת מחדל
-const apiUrl = `https://${process.env.REACT_APP_API_URL}`;
+const apiUrl = process.env.REACT_APP_API_URL;
 
 //axios.defaults.baseURL = apiUrl;
 //console.log("axios.defaults.baseURL:", axios.defaults.baseURL);
@@ -33,7 +33,7 @@ export default {
   },
   addTask: async (name) => {
     try {
-      const result = await axios.post("/tasks", { name, isComplete: false });
+      const result = await axios.post(apiUrl+"/tasks", { name, isComplete: false });
       return result.data;
     } catch (error) {
       console.error("Error adding task:", error);
@@ -42,7 +42,7 @@ export default {
   },
   setCompleted: async (id, name, isComplete) => {
     try {
-      const result = await axios.put(`/tasks/${id}`, { name, isComplete });
+      const result = await axios.put(apiUrl+`/tasks/${id}`, { name, isComplete });
       return result.data;
     } catch (error) {
       console.error("Error updating task:", error);
@@ -51,7 +51,7 @@ export default {
   },
   deleteTask: async (id) => {
     try {
-      const result = await axios.delete(`/tasks/${id}`);
+      const result = await axios.delete(apiUrl+`/tasks/${id}`);
       return result.data;
     } catch (error) {
       console.error("Error deleting task:", error);
