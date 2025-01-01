@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // קביעת כתובת ברירת מחדל
 //const apiUrl = process.env.REACT_APP_API_URL;
-const apiUrl = "http://localhost:5147";
+const apiUrl = "https://todo-list-server-ofps.onrender.com";
 
 //axios.defaults.baseURL = apiUrl;
 //console.log("axios.defaults.baseURL:", axios.defaults.baseURL);
