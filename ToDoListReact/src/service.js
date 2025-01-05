@@ -26,7 +26,7 @@ axios.interceptors.response.use(
 export default {
   getTasks: async () => {
     try {
-      const result = await axios.get(apiUrl+"/tasks");
+      const result = await axios.get('/tasks');
       return result.data;
     } catch (error) {
       if (!error.response) {
@@ -37,7 +37,7 @@ export default {
   },
   addTask: async (name) => {
     try {
-      const result = await axios.post(a+"/tasks", { name, isComplete: false });
+      const result = await axios.post('/tasks', { name, isComplete: false });
       return result.data;
     } catch (error) {
       console.error("Error adding task:", error);
@@ -46,7 +46,7 @@ export default {
   },
   setCompleted: async (id, name, isComplete) => {
     try {
-      const result = await axios.put(apiUrl+`/tasks/${id}`, { name, isComplete });
+      const result = await axios.put(`/tasks/${id}`, { name, isComplete });
       return result.data;
     } catch (error) {
       console.error("Error updating task:", error);
@@ -55,7 +55,7 @@ export default {
   },
   deleteTask: async (id) => {
     try {
-      const result = await axios.delete(apiUrl+`/tasks/${id}`);
+      const result = await axios.delete(`/tasks/${id}`);
       return result.data;
     } catch (error) {
       console.error("Error deleting task:", error);
