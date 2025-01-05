@@ -1,15 +1,15 @@
 import axios from 'axios';
 
 // קביעת כתובת ברירת מחדל
-//const apiUrl = process.env.REACT_APP_API_URL;
-console.log("REACT_APP_API_URL:", process.env.REACT_APP_API_URL);
-const a="https://"+ process.env.REACT_APP_API_URL;
-console.log("REACT_APP_API_URL  a:", a);
-//const apiUrl = https://todo-list-server-ofps.onrender.com;
-const apiUrl ="todo-list-server-ofps.onrender.com";
-//axios.defaults.baseURL = apiUrl;
-//console.log("axios.defaults.baseURL:", axios.defaults.baseURL);
-console.log("apiUrl:", apiUrl);
+
+// אם יש לך קובץ .env, ודא ש-REACT_APP_API_URL מוגדר שם.
+const apiUrl = process.env.REACT_APP_API_URL || 'https://todo-list-server-ofps.onrender.com/';
+
+axios.defaults.baseURL = "https://"+apiUrl;  // הגדרת baseURL לפי משתנה הסביבה או URL ברירת המחדל
+console.log("API Base URL:", apiUrl);
+axios.defaults.headers.common['Content-Type'] = 'application/json';
+
+
 // Interceptor לניהול שגיאות
 axios.interceptors.response.use(
   response => response,
