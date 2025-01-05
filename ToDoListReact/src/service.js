@@ -3,7 +3,10 @@ import axios from 'axios';
 // קביעת כתובת ברירת מחדל
 //const apiUrl = process.env.REACT_APP_API_URL;
 console.log("REACT_APP_API_URL:", process.env.REACT_APP_API_URL);
-const apiUrl = "https://todo-list-server-ofps.onrender.com";
+const a="https://"+ process.env.REACT_APP_API_URL;
+console.log("REACT_APP_API_URL  a:", a);
+//const apiUrl = https://todo-list-server-ofps.onrender.com;
+const apiUrl ="todo-list-server-ofps.onrender.com";
 //axios.defaults.baseURL = apiUrl;
 //console.log("axios.defaults.baseURL:", axios.defaults.baseURL);
 console.log("apiUrl:", apiUrl);
@@ -34,7 +37,7 @@ export default {
   },
   addTask: async (name) => {
     try {
-      const result = await axios.post(apiUrl+"/tasks", { name, isComplete: false });
+      const result = await axios.post(a+"/tasks", { name, isComplete: false });
       return result.data;
     } catch (error) {
       console.error("Error adding task:", error);
