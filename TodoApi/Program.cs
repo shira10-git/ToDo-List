@@ -6,13 +6,10 @@ var builder = WebApplication.CreateBuilder(args);
 // הוספת CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAllOrigins",
-        policy =>
-        {
-            policy.AllowAnyOrigin() // מאפשר לכל המקורות
-                  .AllowAnyMethod()
-                  .AllowAnyHeader();
-        });
+    options.AddPolicy("AllowAll", builder =>
+        builder.WithOrigins("https://todo-list-client-4na8.onrender.com")  // כתובת הלקוח שלך
+               .AllowAnyMethod()
+               .AllowAnyHeader());
 });
 
 // הוספת DbContext לשירותים
@@ -27,7 +24,7 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 // שימוש ב-CORS
-app.UseCors("AllowAllOrigins"); // ודא שהשם תואם את הפוליסה שהגדרת
+app.UseCors("AllowAll");
 
 // הפעלת Swagger בשלב הריצה
 if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
