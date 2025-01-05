@@ -7,7 +7,7 @@ const apiUrl = process.env.REACT_APP_API_URL || 'https://todo-list-server-ofps.o
 
 axios.defaults.baseURL = "https://"+apiUrl;  // הגדרת baseURL לפי משתנה הסביבה או URL ברירת המחדל
 console.log("API Base URL:", apiUrl);
-axios.defaults.headers.common['Content-Type'] = 'application/json';
+// axios.defaults.headers.common['Content-Type'] = 'application/json';
 
 
 // Interceptor לניהול שגיאות
