@@ -30,5 +30,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://todo-list-server-ofps.onrender.com/"
+  "proxy": "https://todo-list-server-ofps.onrender.com/",
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+  }
 }
